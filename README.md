@@ -60,6 +60,30 @@ The final model is stored as a `.pkl` file.
 
 ---
 
+# Model Evaluation and Considerations
+
+## Model Evaluation and Accuracy as a Metric
+In this study, we used **accuracy** as the primary evaluation metric due to its straightforward interpretability and ease of comparison across different models. While accuracy provides a general measure of overall model performance, it does not account for class imbalances or misclassification costs, which are important considerations in a multiclass setting.
+
+## Threats to Validity
+There are a few key limitations in our approach that should be addressed in future iterations:
+
+1. **Evaluation Metrics**: Accuracy alone is not the most informative metric for a multiclass classification problem. It does not distinguish between different types of misclassification. In future work, we would incorporate **precision, recall, F1-score, and confusion matrices** to gain a more detailed understanding of the model's performance across each outcome category.
+   
+2. **Data Sampling**: Due to computational constraints, we performed training on **only 40% of the dataset** to ensure feasibility within a reasonable time frame. While this approach provided a balance between training time and model performance, future work should aim to train on the **full dataset**, leveraging more efficient computational resources or model optimization techniques.
+
+3. **Data Matching Approach**: Currently, we **only used the latest instance of each outcome and intake event** for a unique animal ID. This simplified approach reduces noise but also **limits the amount of available training data**. In the future, we plan to match **all intake and outcome instances** for each animal to create a richer dataset with more training samples.
+
+## Future Improvements
+To enhance model performance and robustness, we suggest the following improvements:
+- **Use More Robust Metrics**: Incorporate **F1-score, precision-recall curves, and confusion matrices** to better evaluate performance across different outcome categories.
+- **Train on the Full Dataset**: Optimize the model and use more computational resources to **train on 100% of the available data** instead of 40%.
+- **Improve Feature Engineering**: Consider **time-based sequences** by analyzing multiple intake and outcome events per animal rather than only using the latest instance.
+
+By addressing these limitations, we can improve the accuracy, generalizability, and interpretability of the model while leveraging more comprehensive data for training.
+
+---
+
 ## Impact
 At its core, this project is passionate about **transforming negative trajectories**—such as **euthanasia or prolonged shelter stays**—into **positive, life-changing outcomes** for animals. By merging **innovative data science techniques** with a **commitment to animal welfare**, the project strives to provide shelters with the **insights needed to make informed decisions, optimize care processes, and ultimately ensure a brighter future for every animal in their care.** 
 
