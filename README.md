@@ -10,6 +10,29 @@ Predictive Modeling:
 
 Develop state-of-the-art supervised learning models (such as XGBoost, LightGBM, and other ensemble techniques) to accurately predict the outcome of shelter animals. Performance will be primarily evaluated using the AUC-ROC metric to ensure robust model validation.
 
+# Stacking Model Performance Analysis
+
+## Overview
+In this project, we implemented a stacking ensemble approach using different meta-models to improve classification performance. The base models used for stacking included **LightGBM**, **Random Forest**, and **Support Vector Machines (SVM)**. Each stacking model was trained with three different meta-learners: **Logistic Regression, Support Vector Machine (SVM), and Random Forest**, to evaluate which combination yielded the best performance.
+
+## Model Combinations and Performance
+We trained three stacking models for each meta-learner, evaluating their performance using **cross-validated accuracy scores**. Below is a summary of our results:
+
+| Meta-Model                  | Combination 1 | Combination 2 | Combination 3 | Mean Accuracy |
+|-----------------------------|--------------|--------------|--------------|---------------|
+| **Logistic Regression**      | **0.8390**   | 0.8323       | 0.8385       | 0.8366        |
+| **Support Vector Machine**   | **0.8439**   | 0.8387       | 0.8433       | **0.8420**    |
+| **Random Forest**            | 0.8336       | 0.8255       | 0.8354       | 0.8315        |
+
+## Key Insights
+- **Support Vector Machine (SVM) as a meta-model** performed the best, achieving the highest mean accuracy across different stacking combinations.
+- **Logistic Regression** was a close second, demonstrating stable performance across different combinations.
+- **Random Forest**, while still effective, had slightly lower accuracy compared to the other two meta-models.
+
+Based on these findings, **the SVM-based stacking model is the most effective choice** for our dataset. Future iterations can explore hyperparameter tuning and additional feature engineering techniques to further enhance performance.
+
+The final model is stored as a pkl
+
 Exploratory Data Analysis (EDA) and Feature Engineering:
 
 Conduct an in-depth EDA to uncover trends, correlations, and anomalies within the data. Through meticulous feature engineering, we aim to enhance model performance and reveal critical factors that drive animal outcomes.
